@@ -1,0 +1,5 @@
+
+.banner_heading h2,.main_heading h2 { text-shadow: 1px 1px 0 #000; -webkit-text-shadow: 1px 1px 0 #000;-o-text-shadow: 1px 1px 0 #000;  -moz-text-shadow: 1px 1px 0 #000;position:relative; behavior:url(common/js/PIE.htc);}
+.portfolio_menu li,.portfolio_menu li.active,.portfolio_img  li a:hover .rolover strong { border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px; -moz-border-radius:5px; position:relative; behavior: url(common/js/PIE.htc);}
+#boxer,#boxer .boxer-close {behavior: url(common/js/PIE.htc);}
+
