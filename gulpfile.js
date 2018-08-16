@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     browserSync = require('browser-sync').create(),
     reload      = browserSync.reload,
+    spritesmith = require('gulp.spritesmith'),
     concatCss = require('gulp-concat-css');
     
 
@@ -25,7 +26,17 @@ gulp.task('js', function(){
 });
 
 
-
+gulp.task('sprite', function () {
+    var spriteData = gulp.src('images/*.png')
+        .pipe(spritesmith({
+            /* this whole image path is used in css background declarations */
+            imgName: 'images/sprite/sprite.png',
+            cssName: 'sprite.css'
+        }));
+    spriteData.img.pipe(gulp.dest('dist'));
+    spriteData.css.pipe(gulp.dest('css'));
+    
+});
  
 gulp.task('css', function () {
     gulp.src('css/*.css')
@@ -89,4 +100,4 @@ gulp.task('watch', function(done) {
   }); 
 
 
-gulp.task('default', [ 'js' ,'css' , 'images', 'watch' , 'serve']);
+gulp.task('default', [ 'js' ,'css' , 'images', 'watch' , 'serve' , 'sprite']);
